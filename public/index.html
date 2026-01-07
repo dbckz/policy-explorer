@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Orbit - Explorer</title>
+    <link rel="stylesheet" href="/css/explorer.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Left: Tree Navigator -->
+        <aside class="tree-panel">
+            <div class="tree-header">
+                <h1>Policy Orbit</h1>
+                <input type="text" id="tree-search" placeholder="Search...">
+            </div>
+            <div class="tree-container" id="tree-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="tree-footer">
+                <button id="btn-expand-all">Expand All</button>
+                <button id="btn-collapse-all">Collapse All</button>
+            </div>
+        </aside>
+
+        <!-- Center: Main Content -->
+        <main class="main-panel">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" id="breadcrumb">
+                <!-- Rendered by JS -->
+            </nav>
+
+            <!-- Current Node -->
+            <div class="current-node" id="current-node">
+                <div class="node-header">
+                    <div class="node-type-badge" id="node-type-badge">Entity</div>
+                    <h2 id="node-name">Select an organization</h2>
+                </div>
+
+                <!-- CRM Fields (for entities) -->
+                <div class="node-crm" id="node-crm">
+                    <div class="crm-row">
+                        <div class="crm-field">
+                            <label>Priority</label>
+                            <div class="btn-row" id="priority-btns">
+                                <button data-value="unknown">Unknown</button>
+                                <button data-value="low">Low</button>
+                                <button data-value="medium">Medium</button>
+                                <button data-value="high">High</button>
+                                <button data-value="critical">Critical</button>
+                            </div>
+                        </div>
+                        <div class="crm-field">
+                            <label>Stage</label>
+                            <div class="btn-row" id="stage-btns">
+                                <button data-value="unknown">Unknown</button>
+                                <button data-value="researching">Researching</button>
+                                <button data-value="contacted">Contacted</button>
+                                <button data-value="engaged">Engaged</button>
+                                <button data-value="aligned">Aligned</button>
+                                <button data-value="champion">Champion</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="crm-row">
+                        <div class="crm-field score-field">
+                            <label>Influence</label>
+                            <div class="score-btns" data-field="influenceScore">
+                                <button data-value="null">—</button>
+                                <button data-value="1">1</button>
+                                <button data-value="2">2</button>
+                                <button data-value="3">3</button>
+                                <button data-value="4">4</button>
+                                <button data-value="5">5</button>
+                            </div>
+                        </div>
+                        <div class="crm-field score-field">
+                            <label>Accessibility</label>
+                            <div class="score-btns" data-field="accessibilityScore">
+                                <button data-value="null">—</button>
+                                <button data-value="1">1</button>
+                                <button data-value="2">2</button>
+                                <button data-value="3">3</button>
+                                <button data-value="4">4</button>
+                                <button data-value="5">5</button>
+                            </div>
+                        </div>
+                        <div class="crm-field score-field">
+                            <label>Alignment</label>
+                            <div class="score-btns" data-field="alignmentScore">
+                                <button data-value="null">—</button>
+                                <button data-value="1">1</button>
+                                <button data-value="2">2</button>
+                                <button data-value="3">3</button>
+                                <button data-value="4">4</button>
+                                <button data-value="5">5</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="crm-row">
+                        <div class="crm-field">
+                            <label>Tags</label>
+                            <div class="tags-wrap" id="tags-wrap"></div>
+                        </div>
+                    </div>
+
+                    <div class="crm-row">
+                        <div class="crm-field">
+                            <label>Last Contacted</label>
+                            <div class="date-row">
+                                <input type="date" id="last-contacted">
+                                <button id="btn-today">Today</button>
+                            </div>
+                        </div>
+                        <div class="crm-field">
+                            <label>Next Action</label>
+                            <input type="text" id="next-action" placeholder="What's next?">
+                        </div>
+                    </div>
+
+                    <div class="crm-row">
+                        <div class="crm-field full">
+                            <label>Notes</label>
+                            <textarea id="notes" rows="3" placeholder="Notes..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Nodes -->
+            <div class="related-section">
+                <!-- Parent -->
+                <div class="related-group" id="parent-group">
+                    <h3>Parent</h3>
+                    <div class="related-cards" id="parent-cards"></div>
+                </div>
+
+                <!-- Siblings -->
+                <div class="related-group" id="siblings-group">
+                    <h3>Siblings <span class="count" id="siblings-count"></span></h3>
+                    <div class="related-cards" id="siblings-cards"></div>
+                </div>
+
+                <!-- Children -->
+                <div class="related-group" id="children-group">
+                    <h3>Children <span class="count" id="children-count"></span></h3>
+                    <div class="related-cards" id="children-cards"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right: Stats/Overview -->
+        <aside class="stats-panel">
+            <div class="stats-header">
+                <h3>Overview</h3>
+            </div>
+            <div class="stat-block">
+                <div class="stat-label">Current Path Depth</div>
+                <div class="stat-value" id="stat-depth">0</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-label">Total in Branch</div>
+                <div class="stat-value" id="stat-branch-total">0</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-label">Triaged in Branch</div>
+                <div class="stat-value" id="stat-branch-triaged">0</div>
+            </div>
+            <hr>
+            <div class="stat-block">
+                <div class="stat-label">Global Progress</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="stat-detail" id="global-progress">0 / 81 triaged</div>
+            </div>
+            <hr>
+            <div class="mini-legend">
+                <div class="legend-item"><span class="dot priority-critical"></span> Critical</div>
+                <div class="legend-item"><span class="dot priority-high"></span> High</div>
+                <div class="legend-item"><span class="dot priority-medium"></span> Medium</div>
+                <div class="legend-item"><span class="dot priority-low"></span> Low</div>
+                <div class="legend-item"><span class="dot priority-unknown"></span> Unknown</div>
+            </div>
+            <hr>
+            <div class="actions">
+                <button id="btn-export">Export Data</button>
+                <button id="btn-import">Import Data</button>
+            </div>
+        </aside>
+    </div>
+
+    <input type="file" id="import-file" accept=".json" style="display: none;">
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/app-explorer.js"></script>
+</body>
+</html>
