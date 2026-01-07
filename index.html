@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK AI & Data Policy Ecosystem</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Control Panel Sidebar -->
+        <aside id="controls">
+            <header>
+                <h1>UK AI & Data Policy Ecosystem</h1>
+                <p class="instructions">
+                    Explore the UK's AI and data policy landscape.
+                    Click nodes to expand/collapse. Drag to reposition.
+                    Scroll to zoom.
+                </p>
+            </header>
+
+            <!-- Search -->
+            <div class="control-group">
+                <label for="search">Search Entities</label>
+                <input type="text" id="search" placeholder="Type to search...">
+                <div id="search-results"></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="control-group">
+                <label>Filter by Type</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="government">Government</button>
+                    <button class="filter-btn" data-filter="external">External</button>
+                </div>
+            </div>
+
+            <!-- View Controls -->
+            <div class="control-group">
+                <label>View Controls</label>
+                <div class="view-buttons">
+                    <button id="expand-all" class="view-btn">Expand All</button>
+                    <button id="collapse-all" class="view-btn">Collapse All</button>
+                </div>
+                <div class="view-buttons">
+                    <button id="reset-view" class="view-btn">Reset View</button>
+                    <button id="fit-screen" class="view-btn">Fit to Screen</button>
+                </div>
+            </div>
+
+            <!-- Zoom Controls -->
+            <div class="control-group">
+                <label>Zoom</label>
+                <div class="zoom-controls">
+                    <button id="zoom-in" class="zoom-btn">+</button>
+                    <button id="zoom-out" class="zoom-btn">−</button>
+                    <span id="zoom-level">100%</span>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="control-group">
+                <label>Legend</label>
+                <div id="legend"></div>
+            </div>
+
+            <!-- Stats -->
+            <div class="control-group stats">
+                <div class="stat">
+                    <span class="stat-value" id="visible-count">0</span>
+                    <span class="stat-label">Visible Nodes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="total-count">0</span>
+                    <span class="stat-label">Total Nodes</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Graph Container -->
+        <main id="graph-container">
+            <svg id="graph"></svg>
+        </main>
+
+        <!-- Tooltip -->
+        <div id="tooltip" class="tooltip hidden">
+            <div class="tooltip-title"></div>
+            <div class="tooltip-type"></div>
+            <div class="tooltip-children"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

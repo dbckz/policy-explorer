@@ -1,0 +1,169 @@
+{
+  "name": "UK AI & Data Policy Ecosystem",
+  "type": "root",
+  "children": [
+    {
+      "name": "Government",
+      "type": "main_category",
+      "children": [
+        {
+          "name": "Executive",
+          "type": "category",
+          "children": [
+            {
+              "name": "Prime Minister & Cabinet",
+              "type": "subcategory",
+              "children": [
+                {"name": "Prime Minister", "type": "entity"},
+                {"name": "Cabinet Secretary", "type": "entity"},
+                {"name": "No.10 Policy Unit", "type": "entity"},
+                {"name": "No.10 Data Science Unit", "type": "entity"},
+                {"name": "Cabinet Office", "type": "entity"}
+              ]
+            },
+            {
+              "name": "Government Departments",
+              "type": "subcategory",
+              "children": [
+                {"name": "DSIT", "type": "entity"},
+                {"name": "Treasury", "type": "entity"},
+                {"name": "FCDO", "type": "entity"},
+                {"name": "Home Office", "type": "entity"},
+                {"name": "Defence", "type": "entity"},
+                {"name": "Health & Social Care", "type": "entity"},
+                {"name": "Business & Trade", "type": "entity"},
+                {"name": "Education", "type": "entity"},
+                {"name": "Transport", "type": "entity"},
+                {"name": "Energy Security & Net Zero", "type": "entity"},
+                {"name": "Environment Food & Rural Affairs", "type": "entity"},
+                {"name": "Justice", "type": "entity"},
+                {"name": "Work & Pensions", "type": "entity"},
+                {"name": "Culture Media & Sport", "type": "entity"},
+                {"name": "Levelling Up Housing & Communities", "type": "entity"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Legislative",
+          "type": "category",
+          "children": [
+            {"name": "House of Commons", "type": "entity"},
+            {"name": "House of Lords", "type": "entity"},
+            {"name": "Select Committees", "type": "entity"},
+            {"name": "APPGs", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Arms-length Bodies",
+          "type": "category",
+          "children": [
+            {"name": "UKRI", "type": "entity"},
+            {"name": "ARIA", "type": "entity"},
+            {"name": "Alan Turing Institute", "type": "entity"},
+            {"name": "AI Safety Institute", "type": "entity"},
+            {"name": "CDEI", "type": "entity"},
+            {"name": "ONS", "type": "entity"},
+            {"name": "UK Stats Authority", "type": "entity"},
+            {"name": "Geospatial Commission", "type": "entity"},
+            {"name": "NCSC", "type": "entity"},
+            {"name": "NPL", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Regulators",
+          "type": "category",
+          "children": [
+            {"name": "ICO", "type": "entity"},
+            {"name": "CMA", "type": "entity"},
+            {"name": "FCA", "type": "entity"},
+            {"name": "Ofcom", "type": "entity"},
+            {"name": "Bank of England", "type": "entity"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Think Tanks / Industry Bodies / Research Institutes",
+      "type": "main_category",
+      "children": [
+        {
+          "name": "Funders",
+          "type": "category",
+          "children": [
+            {"name": "UKRI", "type": "entity"},
+            {"name": "Wellcome Trust", "type": "entity"},
+            {"name": "Gates Foundation", "type": "entity"},
+            {"name": "Nuffield Foundation", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Intelligence Community",
+          "type": "category",
+          "children": [
+            {"name": "RUSI", "type": "entity"},
+            {"name": "IISS", "type": "entity"},
+            {"name": "Janes", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Think Tanks",
+          "type": "category",
+          "children": [
+            {"name": "Ada Lovelace Institute", "type": "entity"},
+            {"name": "Institute for Government", "type": "entity"},
+            {"name": "Tony Blair Institute", "type": "entity"},
+            {"name": "Policy Exchange", "type": "entity"},
+            {"name": "Centre for Long-Term Resilience", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Research Infrastructure Orgs",
+          "type": "category",
+          "children": [
+            {"name": "Bennett Institute", "type": "entity"},
+            {"name": "Leverhulme CFI", "type": "entity"},
+            {"name": "Oxford Internet Institute", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Data Agencies",
+          "type": "category",
+          "children": [
+            {"name": "Open Data Institute", "type": "entity"},
+            {"name": "My Society", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Standards Bodies",
+          "type": "category",
+          "children": [
+            {"name": "BSI", "type": "entity"},
+            {"name": "techUK", "type": "entity"}
+          ]
+        },
+        {
+          "name": "International Orgs",
+          "type": "category",
+          "children": [
+            {"name": "OECD AI Policy Observatory", "type": "entity"},
+            {"name": "GPAI", "type": "entity"},
+            {"name": "Partnership on AI", "type": "entity"},
+            {"name": "Council of Europe", "type": "entity"},
+            {"name": "ISO", "type": "entity"},
+            {"name": "WEF", "type": "entity"}
+          ]
+        },
+        {
+          "name": "Other",
+          "type": "category",
+          "children": [
+            {"name": "Royal Society", "type": "entity"},
+            {"name": "Royal Academy of Engineering", "type": "entity"},
+            {"name": "British Academy", "type": "entity"}
+          ]
+        }
+      ]
+    }
+  ]
+}
