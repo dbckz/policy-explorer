@@ -2,3 +2,5 @@ node_modules/
 crm-data.json
 .DS_Store
 *.log
+.env.local
+Caddyfile
